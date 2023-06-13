@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Assignment 16 - Closures</title>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<h1>CLOSURE</h1>
+		<hr />
+		<hr />
+		<div class="ques">
+			<h3>
+				1. Print Output
+				<pre>
+function counter(){
+	var counter = 0;
+
+	function IncreaseCounter() {
+		return counter += 1;
+	};
+
+	return IncreaseCounter;
+}
+
+var counter = counter();
+alert(counter());
+alert(counter());
+alert(counter());
+alert(counter());
+                </pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				2. Print Output
+				<pre>
+let count = 0;
+(function () {
+	if (count === 0) {
+		let count = 1;
+		console.log(count); // What is logged?
+	}
+	console.log(count); // What is logged?
+})();
+				</pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				3. Print Output
+				<pre>
+for (var i = 0; i < 3; i++) {
+	setTimeout(function log() {
+		console.log(i); // What is logged?
+	}, 1000);
+}
+				</pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				4. Write a code to calculate area of a rectangle using inner function.
+				In this case outer function should accept parameter length and inner
+				function should accept parameter breadth.
+			</h3>
+			<h1>
+				<pre>
+function outerFunction(length) {
+	function innerFunction(breadth) {
+		console.log(`Area :  ${length * breadth}`);
+	}
+	innerFunction(3);
+}
+outerFunction(2);					
+				</pre
+				>
+				Output: <br />
+				Area : 6
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				5. Take a variable in outer function and create an inner function to
+				increase the counter every time it is called
+			</h3>
+			<h1>
+				<pre>
+function outerFunc(num) {
+	console.log(`before inner function is called value is : ${num}`);
+	function innerFunc() {
+		num++;
+		console.log(`after inner function is called value is : ${num}`);
+	}
+	innerFunc();
+}
+outerFunc(1);					
+				</pre
+				>
+				Output: <br />
+				before inner function is called value is : 1 <br />
+				after inner function is called value is : 2
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				6. Print Output
+				<pre>
+var a = 12;
+(function () {
+	alert(a);
+})();
+				</pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				7. Print Output
+				<pre>
+var a = 10;
+var x = (function () {
+	var a = 12;
+	return function () {
+		alert(a);
+	};
+})();
+x();
+				</pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+		<div class="ques">
+			<h3>
+				8. Print Output
+				<pre>
+var globalVar = 'xyz';
+
+(function outerFunc(outerArg) {
+	var outerVar = 'a';
+
+	(function innerFunc(innerArg) {
+		var innerVar = 'b';
+
+		console.log(
+			'outerArg = ' +
+				outerArg +
+				'\n' +
+				'innerArg = ' +
+				innerArg +
+				'\n' +
+				'outerVar = ' +
+				outerVar +
+				'\n' +
+				'innerVar = ' +
+				innerVar +
+				'\n' +
+				'globalVar = ' +
+				globalVar
+		);
+	})(456);
+})(123);
+				</pre
+				>
+			</h3>
+			<h1>
+				<pre></pre>
+			</h1>
+		</div>
+		<hr />
+
+		<script src="./index.js"></script>
+	</body>
+</html>
